@@ -2,16 +2,21 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/Home';
 import Owner from './pages/Owner';
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Home />
+    },
+    {
+      path: '/owner',
+      element: <Owner />
+    }
+  ],
   {
-    path: '/',
-    element: <Home />
-  },
-  {
-    path: '/owner',
-    element: <Owner />
+    basename: import.meta.env.BASE_URL
   }
-]);
+);
 
 export default function App() {
   return <RouterProvider router={router} />;
